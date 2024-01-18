@@ -13,7 +13,7 @@ import os
 rss_url = 'https://api.velog.io/rss/@rimgosu'
 
 # 깃허브 레포지토리 경로
-repo_path = 'https://github.com/rimgosu/velog'
+repo_path = '.'
 
 # 레포지토리 로드
 repo = git.Repo(repo_path)
