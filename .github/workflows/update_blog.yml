@@ -16,6 +16,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
+    - name: Set up Git config
+      run: |
+        git config user.name "rimgosu"
+        git config user.email "newnyup@gmail.com"
+
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
