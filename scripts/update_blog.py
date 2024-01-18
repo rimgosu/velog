@@ -5,16 +5,15 @@
 # - git: 깃허브 레포지토리에 액세스하고 커밋하는 데 사용
 # - os: 파일 시스템과 상호 작용
 
-
 import feedparser
 import git
 import os
 
 # 벨로그 RSS 피드 URL
-rss_url = 'https://velog.io/@rimgosu/posts'
+rss_url = 'https://api.velog.io/rss/@rimgosu'
 
 # 깃허브 레포지토리 경로
-repo_path = 'https://api.velog.io/rss/@rimgosu'
+repo_path = 'https://github.com/rimgosu/velog'
 
 # 레포지토리 로드
 repo = git.Repo(repo_path)
