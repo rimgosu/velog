@@ -21,6 +21,9 @@ jobs:
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git push https://${{ secrets.GITHUB_TOKEN }}@github.com/rimgosu/velog.git
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+
 
     - name: Set up Python
       uses: actions/setup-python@v2
