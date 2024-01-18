@@ -1,10 +1,3 @@
-# 먼저 벨로그의 RSS 피드를 파싱하고 깃허브 레포지토리에 커밋하는 파이썬 스크립트를 작성합니다.
-
-# 필요한 라이브러리들을 설명합니다.
-# - feedparser: RSS 피드 파싱을 위한 라이브러리
-# - git: 깃허브 레포지토리에 액세스하고 커밋하는 데 사용
-# - os: 파일 시스템과 상호 작용
-
 import feedparser
 import git
 import os
@@ -14,6 +7,13 @@ rss_url = 'https://api.velog.io/rss/@rimgosu'
 
 # 깃허브 레포지토리 경로
 repo_path = '.'
+
+# 'velog-posts' 폴더 경로
+posts_dir = os.path.join(repo_path, 'velog-posts')
+
+# 'velog-posts' 폴더가 없다면 생성
+if not os.path.exists(posts_dir):
+    os.makedirs(posts_dir)
 
 # 레포지토리 로드
 repo = git.Repo(repo_path)
@@ -29,7 +29,7 @@ for entry in feed.entries:
     file_name = file_name.replace('\\', '-')  # 백슬래시를 대시로 대체
     # 필요에 따라 추가 문자 대체
     file_name += '.md'
-    file_path = os.path.join(repo_path, file_name)
+    file_path = os.path.join(posts_dir, file_name)
 
     # 파일이 이미 존재하지 않으면 생성
     if not os.path.exists(file_path):
