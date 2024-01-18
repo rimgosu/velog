@@ -23,8 +23,12 @@ feed = feedparser.parse(rss_url)
 
 # 각 글을 파일로 저장하고 커밋
 for entry in feed.entries:
-    # 파일 이름 생성 (예: 글 제목을 사용)
-    file_name = f"{entry.title}.md"
+    # 파일 이름에서 유효하지 않은 문자 제거 또는 대체
+    file_name = entry.title
+    file_name = file_name.replace('/', '-')  # 슬래시를 대시로 대체
+    file_name = file_name.replace('\\', '-')  # 백슬래시를 대시로 대체
+    # 필요에 따라 추가 문자 대체
+    file_name += '.md'
     file_path = os.path.join(repo_path, file_name)
 
     # 파일이 이미 존재하지 않으면 생성
