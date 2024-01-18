@@ -16,15 +16,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Set up Git config
+    - name: Push changes
       run: |
         git config user.name "rimgosu"
         git config user.email "newnyup@gmail.com"
-
-    - name: Push changes
-      run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git push https://${{ secrets.GH_PAT }}@github.com/rimgosu/velog.git
 
     - name: Set up Python
