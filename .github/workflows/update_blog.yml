@@ -34,3 +34,4 @@ jobs:
     - name: Run script
       run: python scripts/update_blog.py
 
+
