@@ -1,5 +1,5 @@
 # velog to github
-- <https://github.com/rimgosu/velog>
+- <https://velog.io/@rimgosu/velog-%EA%B8%80-%EC%9E%91%EC%84%B1-%EC%8B%9C-%EC%9E%90%EB%8F%99%EC%9C%BC%EB%A1%9C-github%EC%97%90-%EC%BB%A4%EB%B0%8B%ED%95%98%EA%B8%B0>
 - 다음 레포지토리와 동일하게 셋팅 후, python 파일에서 자기 벨로그 주소를 적고, 권한 설정만 해주면 벨로그에 쓴 글을 자동으로 깃허브에 작성해준다.
 
 ## 1. github 새 레포지토리 만들기
